@@ -59,6 +59,51 @@
 
 ```
 
-## 修改app.wpy中入口文件为home.wpy
+### 修改app.wpy中入口文件为home.wpy，打开小程序可以看到变化
 
-## 打开小程序可以看到变化
+
+
+## wpy文件格式
+
+
+
+
+### `*.wpy`中的`<script>`部分
+```
+import wepy from 'wepy';
+
+//通过继承自wepy.page的类创建页面逻辑
+export default class Index extends wepy.page {
+    //可用于页面模板绑定的数据
+    data = {
+        motto: 'Hello World',
+    };
+
+    //事件处理函数(集中保存在methods对象中)
+    methods = {
+    };
+
+    //页面的生命周期函数
+    onLoad() {
+    };
+}
+```
+
+
+### `*.wpy`中的`<style>`部分
+```
+<style lang="less">
+
+//遵循css样式
+</style>
+```
+
+### `*.wpy`中的`<template>`部分
+```
+<template>
+//使用小程序的组件
+  <view>
+  </view>
+
+</template>
+```
