@@ -1,0 +1,44 @@
+<style lang="less">
+
+</style>
+<template>
+  <view class="container" >
+
+    <text class="info">{{step.count}}</text>
+    <text class="info">今天为本群点击的次数</text>
+    <!--<image style="width: 200px; height: 200px; background-color: #eeeeee;" mode="{{item.mode}}" src="{{step.img}}"></image>-->
+
+    <button @tap="tap" size="default" type="primary">点击木鱼</button>
+
+  </view>
+
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import howler from 'howler'
+  export default class Home extends wepy.page {
+
+    data = {
+        step:{
+          count:0,
+          img:"../image/1.jpg"
+
+  }
+    }
+    methods = {
+      tap(){
+        this.step.count++
+        this.play()
+      },
+      play(){
+        console.log("播放")
+        // var sound = new Howl({
+        //   src: ['sound.webm', '../audio/chengdou.mp3']
+        // });
+        // sound.play()
+      }
+    }
+
+  }
+</script>
